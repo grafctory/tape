@@ -9,11 +9,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- `report()` formats plain objects, null-prototype objects and arrays as compact JSON, clipped like strings by the
-  optional `length`, in place of their `[object Object]` string representation, so that structured failures such as
-  RFC 9457 problem details show what they carry; error-like plain objects are reported as JSON rather than by message
-- `report()` returns the `[unreadable value]` placeholder for values that can't be inspected or converted without
-  throwing, such as revoked proxies and cyclic plain objects, rather than throwing from the logging code
+- **Breaking**: `report()` formats plain objects, null-prototype objects and arrays, error-like ones included, as
+  compact JSON clipped by the optional `length`, so that structured failures such as RFC 9457 problem details show
+  what they carry; code matching the old output reads `{"status":404}` for `[object Object]` and `["a","b"]` for `a,b`
+- `report()` no longer throws from the logging code: values that can't be inspected or converted, such as revoked
+  proxies and cyclic plain objects, are reported as the `[unreadable value]` placeholder
+- **Breaking**: Upgrade `@metreeca/core` to `^0.14.0`; projects using Core alongside this package raise their own
+  `@metreeca/core` dependency to `^0.14.0` as well, so that both packages share a single copy of Core
 
 ## [0.12.0](https://github.com/metreeca/tape/compare/v0.11.1...v0.12.0) - 2026-10-19
 

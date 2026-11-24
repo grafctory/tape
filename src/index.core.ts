@@ -24,8 +24,8 @@
  * @module
  */
 
-import { isArray, isError, isFunction, isNumber, isObject, isString } from "@metreeca/core";
-import { clip, escape } from "@metreeca/core/strings";
+import { isArray, isError, isFunction, isNumber, isObject, isString } from "@grafctory/core";
+import { clip, escape } from "@grafctory/core/strings";
 
 
 /**

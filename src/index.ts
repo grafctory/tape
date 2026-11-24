@@ -25,8 +25,8 @@
  */
 
 import { Config, ConfigError, configureSync, getConfig, getLogger, type Logger, type LogLevel } from "@logtape/logtape";
-import { isArray, isError, isFunction, isObject, isString } from "@metreeca/core";
-import { equals } from "@metreeca/core/values";
+import { isArray, isError, isFunction, isObject, isString } from "@grafctory/core";
+import { equals } from "@grafctory/core/values";
 import { category, internal } from "./category.js";
 import { defaults } from "./defaults.js";
 
@@ -76,7 +76,7 @@ export function log(): Logger;
  *
  * - **Imported packages** (from `node_modules/`): Non-scoped packages start with the bare
  *   package name (for instance, `["lodash", "index"]` for a bare entry point); scoped
- *   packages use two segments (for instance, `["@metreeca", "post", "index"]`).
+ *   packages use two segments (for instance, `["@grafctory", "post", "index"]`).
  *   Build directories (`dist`, `lib`, `build`, `out`) and redundant package name
  *   folders are skipped. Extensions are removed from remaining paths; `"index"` is
  *   preserved. Hierarchical matching means a filter at `lodash` still applies to

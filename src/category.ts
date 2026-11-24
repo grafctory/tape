@@ -25,7 +25,7 @@
  * @module
  */
 
-import { clip } from "@metreeca/core/strings";
+import { clip } from "@grafctory/core/strings";
 
 
 const Roots = new Set(["dist", "lib", "build", "out"]);

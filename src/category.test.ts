@@ -81,13 +81,13 @@ describe("parse()", () => {
 	describe("node_modules packages", () => {
 
 		test("extracts scoped package name from node_modules with preserved index", () => {
-			const url = "file:///Users/Alessandro/Metreeca/Projects/EC2U/Pipe/node_modules/@metreeca/core/dist/index.js";
-			expect(category(url)).toEqual(["@metreeca", "core", "index"]);
+			const url = "file:///Users/Alessandro/Metreeca/Projects/EC2U/Pipe/node_modules/@grafctory/core/dist/index.js";
+			expect(category(url)).toEqual(["@grafctory", "core", "index"]);
 		});
 
 		test("extracts scoped package with nested module path", () => {
-			const url = "file:///Users/Alessandro/Metreeca/Projects/EC2U/Pipe/node_modules/@metreeca/core/dist/utils/validate.js";
-			expect(category(url)).toEqual(["@metreeca", "core", "utils", "validate"]);
+			const url = "file:///Users/Alessandro/Metreeca/Projects/EC2U/Pipe/node_modules/@grafctory/core/dist/utils/validate.js";
+			expect(category(url)).toEqual(["@grafctory", "core", "utils", "validate"]);
 		});
 
 		test("extracts regular package name from node_modules", () => {

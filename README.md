@@ -1,10 +1,10 @@
-# @metreeca/tape
+# @grafctory/tape
 
-[![npm](https://img.shields.io/npm/v/@metreeca/tape)](https://www.npmjs.com/package/@metreeca/tape)
+[![npm](https://img.shields.io/npm/v/@grafctory/tape)](https://www.npmjs.com/package/@grafctory/tape)
 
 Simplified facade for the [LogTape](https://logtape.org/) logging framework.
 
-**@metreeca/tape** provides an opinionated, easy-to-use logging facade for TypeScript/JavaScript applications. It
+**@grafctory/tape** provides an opinionated, easy-to-use logging facade for TypeScript/JavaScript applications. It
 streamlines LogTape configuration with automatic zero-code logger setup for local codebase modules and built-in error
 handling for safe function execution. Key features include:
 
@@ -18,7 +18,7 @@ handling for safe function execution. Key features include:
 # Installation
 
 ```shell
-npm install @metreeca/tape
+npm install @grafctory/tape
 ```
 
 > [!WARNING]
@@ -31,10 +31,10 @@ npm install @metreeca/tape
 > [!NOTE]
 >
 > This section introduces essential concepts and common patterns: see the
-> [API reference](https://metreeca.github.io/tape/) for complete coverage.
+> [API reference](https://grafctory.github.io/tape/) for complete coverage.
 
 Every logger is identified by a **category**, that is, a path locating the emitting module inside LogTape's
-[hierarchical category system](https://logtape.org/manual/categories). **@metreeca/tape** derives categories
+[hierarchical category system](https://logtape.org/manual/categories). **@grafctory/tape** derives categories
 automatically from `import.meta.url`: internal project modules are rooted at `"/"`, modules loaded from `node_modules/`
 at their package name.
 
@@ -53,13 +53,13 @@ matches only `src/name/index.ts`); console labels don't draw that distinction, r
 `"error"`, `"fatal"`):
 
 ```typescript
-import { log } from '@metreeca/tape';
+import { log } from '@grafctory/tape';
 
 log({
 	"/": "info",               // All internal code
 	"/utils": "debug",         // Specific internal module
 	"lodash": "trace",         // Specific non-scoped package
-	"@metreeca/flow": "debug"  // Specific scoped package
+	"@grafctory/flow": "debug"  // Specific scoped package
 });
 ```
 
@@ -67,7 +67,7 @@ For advanced use cases, pass a complete LogTape `Config` object:
 
 ```typescript
 import { getFileSink } from '@logtape/file';
-import { getConsoleSink, log } from '@metreeca/tape';
+import { getConsoleSink, log } from '@grafctory/tape';
 
 log({
 	sinks: {
@@ -85,7 +85,7 @@ log({
 ```
 
 The file sink lives in the separate [`@logtape/file`](https://www.npmjs.com/package/@logtape/file) package; only
-LogTape's core exports are re-exported by **@metreeca/tape**.
+LogTape's core exports are re-exported by **@grafctory/tape**.
 
 Both configuration forms are idempotent: repeated calls with a deep-equal configuration are silently accepted, while
 applying a different configuration throws unless the full `Config` form is used with `reset` set to `true`.
@@ -105,7 +105,7 @@ dependencies:
 
 - **External modules** (from `node_modules/`):
 	- Non-scoped packages: bare package name (e.g., `["lodash", "map"]`)
-	- Scoped packages: scope + name (e.g., `["@metreeca", "flow", "feeds"]`)
+	- Scoped packages: scope + name (e.g., `["@grafctory", "flow", "feeds"]`)
 	- Skips build directories (`dist`, `lib`, `build`, `out`)
 
 | File Path                                   | Category                              |
@@ -113,14 +113,14 @@ dependencies:
 | `file:///project/src/utils/logger.ts`       | `["/", "project", "utils", "logger"]` |
 | `file:///project/src/utils/index.ts`        | `["/", "project", "utils", "index"]`  |
 | `node_modules/lodash/map.js`                | `["lodash", "map"]`                   |
-| `node_modules/@metreeca/flow/dist/index.js` | `["@metreeca", "flow", "index"]`      |
+| `node_modules/@grafctory/flow/dist/index.js` | `["@grafctory", "flow", "index"]`      |
 
 `"index"` is preserved as an explicit segment so that `name.ts` and `name/index.ts` resolve to distinct categories
 (`["/", "project", "name"]` vs `["/", "project", "name", "index"]`). LogTape's hierarchical matching means a filter at
-`/project/name` or `@metreeca/flow` still applies to nested `index` loggers.
+`/project/name` or `@grafctory/flow` still applies to nested `index` loggers.
 
 ```typescript
-import { log } from '@metreeca/tape';
+import { log } from '@grafctory/tape';
 
 // Get logger for current module (auto-configures console logging on first use)
 
@@ -171,7 +171,7 @@ Measure the execution time of synchronous or asynchronous tasks, reporting the r
 milliseconds to a monitor callback:
 
 ```typescript
-import { log, time } from '@metreeca/tape';
+import { log, time } from '@grafctory/tape';
 
 const logger = log(import.meta.url);
 
@@ -198,7 +198,7 @@ Format values for inclusion in log messages, bounding their extent and surfacing
 be visible in the log:
 
 ```typescript
-import { log, report } from '@metreeca/tape';
+import { log, report } from '@grafctory/tape';
 
 const logger = log(import.meta.url);
 
@@ -276,10 +276,10 @@ for the log never raises a failure of its own; the placeholder is never clipped,
 
 # Support
 
-- open an [issue](https://github.com/metreeca/tape/issues) to report a problem or to suggest a new feature
-- start a [discussion](https://github.com/metreeca/tape/discussions) to ask a how-to question or to share an idea
+- open an [issue](https://github.com/grafctory/tape/issues) to report a problem or to suggest a new feature
+- start a [discussion](https://github.com/grafctory/tape/discussions) to ask a how-to question or to share an idea
 
 # License
 
 This project is licensed under the Apache 2.0 License –
-see [LICENSE](https://github.com/metreeca/tape?tab=Apache-2.0-1-ov-file) file for details.
+see [LICENSE](https://github.com/grafctory/tape?tab=Apache-2.0-1-ov-file) file for details.

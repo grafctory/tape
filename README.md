@@ -227,6 +227,15 @@ logger.debug(`retrying ${report(fetchUsers)}`); // retrying fetchUsers()
 logger.error(`request failed / ${report({ status: 503 })}`); // request failed / {"status":503}
 ```
 
+The console sink of the default configuration formats every value a log message interpolates the same way, whether it
+is bound to a placeholder or embedded in a tagged template, so structured properties need no explicit formatting:
+
+```typescript
+logger.info("labels {labels}", { labels: { pipe: "/events" } }); // labels {"pipe":"/events"}
+
+logger.warning`unknown tag ${"tag\n"}`; // unknown tag "tag\n"
+```
+
 Numbers are formatted with grouped digits, strings as quoted literals, errors through their message, functions through
 their name, plain objects and arrays as compact JSON, and any other value through its string representation.
 

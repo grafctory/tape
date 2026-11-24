@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased](https://github.com/metreeca/tape/compare/v0.13.1...HEAD)
 
+### Fixed
+
+- The default console sink formats interpolated values as `report()` does, so placeholder properties and tagged template
+  values print as JSON, quoted strings or grouped numbers rather than `[object Object]`
+- `log()` wrappers of async functions are typed as returning `Promise<undefined | R>`, matching their runtime result,
+  rather than `undefined | Promise<R>`
+
 ## [0.13.1](https://github.com/metreeca/tape/compare/v0.13.0...v0.13.1) - 2026-11-24
 
 ### Changed

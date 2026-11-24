@@ -16,6 +16,7 @@
 
 import { type Config, getConsoleSink, type LoggerConfig, type LogLevel } from "@logtape/logtape";
 import { internal, label, parse } from "./category.js";
+import { report } from "./index.core.js";
 
 /**
  * Visual severity prefixes for log levels.
@@ -43,10 +44,11 @@ const SourceWidth = 20;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * Creates a default LogTape configuration with console sink and custom formatter.
+ * Creates a default LogTape configuration with a console sink.
  *
- * Configures console output with visual severity prefixes, suppresses LogTape
- * meta logger warnings, and applies category-to-{@link LogLevel | level} mappings from the provided `config`.
+ * Console entries carry visual severity prefixes and column-aligned source labels, and every value a message
+ * interpolates is formatted as {@link report} formats it. LogTape meta logger warnings are suppressed, and the
+ * category-to-{@link LogLevel | level} mappings in `config` set the minimum level of each category.
  *
  * @internal
  *
@@ -66,7 +68,10 @@ export function defaults(config: Record<string, LogLevel>): Config<"console", ne
 					"%s %s %s",
 					(Prefixes[level] ?? "?").padStart(3),
 					label(category, SourceWidth).padEnd(SourceWidth),
-					message.map(String).join("")
+					message.map((part, index) => index%2 === 0 // LogTape interleaves literal text with values
+						? String(part)
+						: report(part)
+					).join("")
 				]
 
 			})

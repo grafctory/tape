@@ -18,6 +18,7 @@ import { type Config, getConsoleSink, type LoggerConfig, type LogLevel } from "@
 import { internal, label, parse } from "./category.js";
 import { report } from "./index.core.js";
 
+
 /**
  * Visual severity prefixes for log levels.
  *

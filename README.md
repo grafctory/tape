@@ -1,12 +1,17 @@
 # @grafctory/tape
 
-[![npm](https://img.shields.io/npm/v/@grafctory/tape)](https://www.npmjs.com/package/@grafctory/tape)
+[![npm][npm-badge]][npm]
+
+[npm-badge]: https://img.shields.io/npm/v/@grafctory/tape
+[npm]: https://www.npmjs.com/package/@grafctory/tape
+[grafctory]: https://github.com/grafctory
 
 Simplified facade for the [LogTape](https://logtape.org/) logging framework.
 
-**@grafctory/tape** provides an opinionated, easy-to-use logging facade for TypeScript/JavaScript applications. It
-streamlines LogTape configuration with automatic zero-code logger setup for local codebase modules and built-in error
-handling for safe function execution. Key features include:
+**@grafctory/tape** is the logging module of the [Grafctory][grafctory] model-driven knowledge graph framework. It
+provides an opinionated, easy-to-use logging facade for TypeScript/JavaScript applications. It streamlines LogTape
+configuration with automatic zero-code logger setup for local codebase modules and built-in error handling for safe
+function execution. Key features include:
 
 - **Simplified Configuration**: sensible defaults with easy level management
 - **Hierarchical Categories**: automatic category derivation from `import.meta.url`
@@ -283,3 +288,5 @@ for the log never raises a failure of its own; the placeholder is never clipped,
 
 This project is licensed under the Apache 2.0 License –
 see [LICENSE](https://github.com/grafctory/tape?tab=Apache-2.0-1-ov-file) file for details.
+
+<sub>Grafctory™ is a trademark of Metreeca srl.</sub>

@@ -10,7 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased](https://github.com/grafctory/tape/compare/v0.13.2...HEAD)
 
-## [0.13.2](https://github.com/metreeca/tape/compare/v0.13.1...v0.13.2) - 2026-11-24
+## [0.13.2](https://github.com/grafctory/tape/compare/v0.13.1...v0.13.2) - 2026-11-24
 
 ### Fixed
 
@@ -19,13 +19,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `log()` wrappers of async functions are typed as returning `Promise<undefined | R>`, matching their runtime result,
   rather than `undefined | Promise<R>`
 
-## [0.13.1](https://github.com/metreeca/tape/compare/v0.13.0...v0.13.1) - 2026-11-24
+## [0.13.1](https://github.com/grafctory/tape/compare/v0.13.0...v0.13.1) - 2026-11-24
 
 ### Changed
 
 - Maintenance release with no change to the published API or behaviour
 
-## [0.13.0](https://github.com/metreeca/tape/compare/v0.12.0...v0.13.0) - 2026-11-17
+## [0.13.0](https://github.com/grafctory/tape/compare/v0.12.0...v0.13.0) - 2026-11-17
 
 ### Changed
 
@@ -37,13 +37,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - **Breaking**: Upgrade `@metreeca/core` to `^0.14.0`; projects using Core alongside this package raise their own
   `@metreeca/core` dependency to `^0.14.0` as well, so that both packages share a single copy of Core
 
-## [0.12.0](https://github.com/metreeca/tape/compare/v0.11.1...v0.12.0) - 2026-10-19
+## [0.12.0](https://github.com/grafctory/tape/compare/v0.11.1...v0.12.0) - 2026-10-19
 
 ### Changed
 
 - Upgrade `@metreeca/core` to `^0.13.0`
 
-## [0.11.1](https://github.com/metreeca/tape/compare/v0.11.0...v0.11.1) - 2026-10-14
+## [0.11.1](https://github.com/grafctory/tape/compare/v0.11.0...v0.11.1) - 2026-10-14
 
 ### Changed
 
@@ -51,7 +51,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Published exports declare the `@metreeca/source` condition, resolving each entry point to its TypeScript source in
   checkouts linked for local development, while registry consumers keep resolving to the compiled `dist` modules
 
-## [0.11.0](https://github.com/metreeca/tape/compare/v0.10.1...v0.11.0) - 2026-10-01
+## [0.11.0](https://github.com/grafctory/tape/compare/v0.10.1...v0.11.0) - 2026-10-01
 
 ### Changed
 
@@ -63,14 +63,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Realign to the renamed `@metreeca/core` values module, raising the minimum supported version to `0.12.0`: `equals` is
   imported from `@metreeca/core/values` in place of `@metreeca/core/structures`
 
-## [0.10.1](https://github.com/metreeca/tape/compare/v0.10.0...v0.10.1) - 2026-09-09
+## [0.10.1](https://github.com/grafctory/tape/compare/v0.10.0...v0.10.1) - 2026-09-09
 
 ### Fixed
 
 - Clip overlong source labels in console entries to the fixed 20-character field width, so that prefix,
   source and message stay column-aligned across entries
 
-## [0.10.0](https://github.com/metreeca/tape/compare/v0.9.1...v0.10.0) - 2026-08-28
+## [0.10.0](https://github.com/grafctory/tape/compare/v0.9.1...v0.10.0) - 2026-08-28
 
 ### Added
 

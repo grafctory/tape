@@ -1,6 +1,6 @@
 {
   "name": "@grafctory/tape",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "description": "Simplified facade for the LogTape logging framework.",
   "keywords": [
     "typescript",

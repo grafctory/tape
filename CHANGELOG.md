@@ -8,7 +8,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 > [!NOTE]
 > Published as `@grafctory/tape` from version 0.13.2; earlier versions were published as `@metreeca/tape`.
 
-## [Unreleased](https://github.com/grafctory/tape/compare/v0.13.2...HEAD)
+## [Unreleased](https://github.com/grafctory/tape/compare/v0.13.3...HEAD)
+
+## [0.13.3](https://github.com/grafctory/tape/compare/v0.13.2...v0.13.3) - 2026-11-26
+
+### Changed
+
+- README introduces the package as part of the Grafctory framework, and bug reports by email go to `info@grafctory.dev`
 
 ## [0.13.2](https://github.com/grafctory/tape/compare/v0.13.1...v0.13.2) - 2026-11-24
 
